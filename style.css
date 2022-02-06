@@ -1,31 +1,37 @@
 header {
   border: 1px solid blue;
+  background-color: aqua;
 }
 
 main {
   border: 1px solid red;
+  background-color: rgb(128, 112, 91);
 }
 
 .boxMole {
   width: 100px;
   height: 100px;
   border: 1px solid green;
+  background-color: coral;
 }
 
 #pointCount {
   width: 50px;
   height: 50px;
   border: 1px solid orange;
+  background-color: darkcyan;
 }
 
 #startGame {
   width: 50px;
   height: 50px;
   border: 1px solid purple;
+  background-color: darkgray;
 }
 
 #gameTimer {
   width: 50px;
   height: 50px;
   border: 1px solid teal;
+  background-color: fuchsia;
 }
