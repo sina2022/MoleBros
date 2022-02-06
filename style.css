@@ -8,6 +8,10 @@ main {
   background-color: rgb(128, 112, 91);
 }
 
+footer {
+  background-color: darkkhaki;
+}
+
 .boxMole {
   width: 100px;
   height: 100px;
