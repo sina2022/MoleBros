@@ -39,3 +39,11 @@ footer {
   border: 1px solid teal;
   background-color: fuchsia;
 }
+
+.ground {
+  img: url("/Photos/ground.jpg");
+}
+
+.mole {
+  img: url("/Photos/diglett.jpg");
+}

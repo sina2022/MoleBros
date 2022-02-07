@@ -1,8 +1,8 @@
 //Imports and constants
 const heyNavi = new Audio("./Sounds/navi_hey.mp3");
 const bgMusic = new Audio("./sounds/Toddler Band - Godmode.mp3");
+const holes = document.querySelectorAll(".boxMole");
 const moleHoles = document.querySelectorAll(".mole");
-const totalBoxes = document.querySelectorAll(".ground").length;
 const scoreDisplay = document.getElementById("point");
 
 //Initialize variables
@@ -19,7 +19,7 @@ function randomTime() {
 
 //Chooses a random mole hole. If it's the same one, it goes through the loop again.
 function randomMoleHole(holes) {
-    const iHole = Math.floor(Math.random() * totalBoxes);
+    const iHole = Math.floor(Math.random() * holes.length);
     const hole = holes[iHole];
     if (lastMoleHole === hole) {
         return randomMoleHole(holes);
