@@ -1,0 +1,18 @@
+.ground {
+  background-image: url(./Photos/ground.jpg);
+  z-index: 1;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.mole {
+  background-image: url(./Photos/diglett.jpg);
+  position: relative;
+  height: auto;
+  width: auto;
+  background-size: contain;
+  transition: all 0.2s ease;
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
