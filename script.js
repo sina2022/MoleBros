@@ -12,9 +12,9 @@ let score = 0;
 
 
 
-// Choose a random time between 0.25-1.2 seconds
+// Choose a random time between 0.5-1.2 seconds
 function randomTime() {
-    return Math.random() * (1200 - 250) + 250;
+    return Math.random() * (1200 - 500) + 500;
 }
 
 //Chooses a random mole hole. If it's the same one, it goes through the loop again.
@@ -36,7 +36,7 @@ function popMole() {
 
     setTimeout(() => {
         if (!countDown) popMole();
-        moleHoles.classList.remove("popped")
+        moleHoles.classList.remove("popped");
     }, randomTime());
 }
 
@@ -46,7 +46,7 @@ function gameStart() {
     score = 0;
     countDown = false;
     popMole();
-    setTimeout(()=> countDown = true, 30000)
+    setTimeout(() => countDown = true, 30000);
 }
 
 //+1 points for each mole that is hit.
