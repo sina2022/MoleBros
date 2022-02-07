@@ -10,11 +10,6 @@ let lastMoleHole;
 let countDown = false;
 let score = 0;
 
-//Event Listeners
-document.getElementById("startGame").addEventListener("click", () => {
-    gameStart();
-    bgMusic.play();
-});
 moleHoles.forEach(hole => hole.addEventListener('mousedown', hitMole));
 
 // Choose a random time between 0.25-1.2 seconds
@@ -61,3 +56,9 @@ function hitMole(e) {
     scoreDisplay.textContent = score;
     heyNavi.play();
 }
+
+//Event Listeners
+document.getElementById("startGame").addEventListener("click", () => {
+    gameStart();
+    bgMusic.play();
+});
