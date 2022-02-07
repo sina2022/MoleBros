@@ -41,9 +41,9 @@ footer {
 }
 
 .ground {
-  img: url("/Photos/ground.jpg");
+  background-image: url("/Photos/ground.jpg");
 }
 
 .mole {
-  img: url("/Photos/diglett.jpg");
+  background-image: url("/Photos/diglett.jpg");
 }
