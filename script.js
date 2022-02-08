@@ -1,5 +1,6 @@
 const heyNavi = new Audio('./Sounds/navi_hey.mp3');
 const bgMusic = new Audio('./Sounds/Toddler Band - Godmode.mp3');
+bgMusic.volume = 0.2;
 const holes = document.querySelectorAll('.boxMole');
 const scoreDisplay = document.querySelector('#pointCount');
 const diglett = document.querySelectorAll('.mole');
