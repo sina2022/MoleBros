@@ -45,6 +45,7 @@ function whack(e) {
     score++;
     this.parentNode.classList.remove('up');
     pointCount.textContent = score;
+    
 }
 moles.forEach(mole => mole.addEventListener('click', whack));
 
