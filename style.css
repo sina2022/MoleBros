@@ -22,7 +22,6 @@ footer {
   height: 100px;
   border: 1px solid rgb(104, 173, 230);
   background-color: skyblue;
-  background-image: url("Photos/diglett.png");
 }
 
 #pointCount {
@@ -46,6 +45,7 @@ footer {
   background-color: #e4d1ba;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 .mole {
   background: url("/Photos/diglett.jpg") bottom center no-repeat;
@@ -95,14 +95,25 @@ footer {
   justify-content: center;
 }
 
+=======
+>>>>>>> 6421054b8780e72630505fe066f3fefc4f10399e
 /*.ground {
   background-image: url("Photos/diglett.png");
   z-index: 1;
   background-size: contain;
 }*/
 
-/*.mole {
+.mole {
+  height: 100px;
   background-image: url("Photos/diglett.png");
   background-size: contain;
+<<<<<<< HEAD
 }*/
 >>>>>>> 20f4e3de4f6f63c3f79e71c9ea78cff2f1f63581
+=======
+  background-position: 50%;
+  background-repeat: no-repeat;
+  justify-content: center;
+  /*display: none;*/
+}
+>>>>>>> 6421054b8780e72630505fe066f3fefc4f10399e
