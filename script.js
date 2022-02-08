@@ -12,7 +12,7 @@ let timerId;
 let timeLeft;
 bgMusic.volume = 0.2;
 
-alert("Click on the moles that pop up to get a point");
+alert("Instructions: Click on the moles that pop up to get a point!");
 
 //Generate a random time from a range from 0.4-1.2s
 function randomTime() {
