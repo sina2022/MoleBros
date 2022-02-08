@@ -1,43 +1,44 @@
 header {
-  border: 1px solid blue;
-  background-color: aqua;
+  border: 1px solid #a56642;
+  background-color: #c29378;
 }
 
 main {
-  border: 1px solid red;
-  background-color: rgb(128, 112, 91);
+  border: 1px solid #bb8e5a;
+  background-color: #e2bd92;
 }
 
 footer {
-  background-color: darkkhaki;
+  border: 1px solid #a56642;
+  background-color: #c29378;
 }
 
 .boxMole {
   width: 100px;
   height: 150px;
   border: 1px solid green;
-  background-color: rgb(250, 220, 165);
+  background-color: skyblue;
 }
 
 #pointCount {
   width: 50px;
   height: 50px;
-  border: 1px solid orange;
-  background-color: darkcyan;
+  border: 1px solid #bd976c;
+  background-color: #e4d1ba;
 }
 
 #startGame {
   width: 50px;
   height: 50px;
-  border: 1px solid purple;
-  background-color: darkgray;
+  border: 1px solid #bd976c;
+  background-color: #e4d1ba;
 }
 
 #gameTimer {
   width: 50px;
   height: 50px;
-  border: 1px solid teal;
-  background-color: fuchsia;
+  border: 1px solid #bd976c;
+  background-color: #e4d1ba;
 }
 
 .mole {
@@ -68,6 +69,6 @@ footer {
   bottom: -20px;
 }
 
-.boxMole.up .mole {
+.boxMole.popped .mole {
   top: 0;
 }
