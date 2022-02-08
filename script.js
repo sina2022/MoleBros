@@ -1,58 +1,52 @@
-const heyNavi = new Audio('./Sounds/navi_hey.mp3');
-const bgMusic = new Audio('./Sounds/Toddler Band - Godmode.mp3');
 const holes = document.querySelectorAll('.boxMole');
-const scoreDisplay = document.querySelector('.score');
+console.log(holes);
+const scoreBoard = document.querySelector('.score');
 const moles = document.querySelectorAll('.mole');
-
 let timeUp = false;
 let score = 0;
 let lastHole;
 let timerId;
 let timeLeft;
 
-function randomTime() {
-    return Math.round(Math.random() * (1200 - 400) + 400);
-}
-function randomMoleHole(holes) {
-    const iHole = Math.floor(Math.random() * holes.length);
-    const hole = holes[iHole];
+function randomHole(holes) {
+    const idx = Math.floor(Math.random() * holes.length);
+    const hole = holes[idx];
     if (hole === lastHole) {
-        return randomMoleHole(holes);
+        console.log('duplicate hole');
+        return randomHole(holes);
     }
     lastHole = hole;
     return hole;
 }
 
-function popMole() {
-    const time = randomTime();
-    const hole = randomMoleHole(holes);
+function peep() {
+    const time = 800;
+    const hole = randomHole(holes);
     hole.classList.add('popped');
     setTimeout(() => {
         hole.classList.remove('popped');
-        if (!timeUp) popMole();
+        if (!timeUp) peep();
     }, time);
 }
 
 function startGame() {
     document.getElementById("btnStart").disabled = true;
-    scoreDisplay.textContent = 0;
+    pointCount.textContent = 0;
     timeUp = false;
     score = 0;
-    popMole();
+    peep();
     timeLeft = 5;
     timerId = setInterval(countdown, 1000);
-    setTimeout(() => timeUp = true, 30000);
+    setTimeout(() => timeUp = true, 5000);
 
 }
 
-function hitMole(e) {
+function whack(e) {
     score++;
     this.parentNode.classList.remove('popped');
-    scoreDisplay.textContent = score;
-    heyNavi.play();
+    pointCount.textContent = score;
 }
-
-moles.forEach(mole => mole.addEventListener('click', hitMole));
+moles.forEach(mole => mole.addEventListener('click', whack));
 
 
 let elem = document.getElementById('gameTimer');
