@@ -41,7 +41,7 @@ footer {
 }
 
 .mole {
-  background: url("/Photos/diglett.png") bottom center no-repeat;
+  background: url("Photos/diglett.png") bottom center no-repeat;
   background-size: 50%;
   position: absolute;
   top: 100%;
@@ -58,7 +58,7 @@ footer {
 
 .boxMole:after {
   display: block;
-  background: url("/Photos/ground.png") bottom center no-repeat;
+  background: url("Photos/ground.png") bottom center no-repeat;
   background-size: contain;
   content: "";
   width: 100%;
