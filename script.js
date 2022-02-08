@@ -12,7 +12,7 @@ let timerId;
 let timeLeft;
 bgMusic.volume = 0.2;
 
-//Generate a random time from a range
+//Generate a random time from a range from 0.4-1.2s
 function randomTime() {
     return Math.round(Math.random() * (1200 - 400) + 400);
 }
@@ -65,6 +65,7 @@ function countdownTimer() {
     if (timeLeft == -1) {
         clearTimeout(timerId);
         document.getElementById("btnStart").disabled = false;
+        bgMusic.pause();
     } else {
         timerDisplay.innerHTML = timeLeft + ' seconds remaining';
         timeLeft--;
