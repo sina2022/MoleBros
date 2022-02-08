@@ -1,65 +1,60 @@
-//Imports and constants
-const heyNavi = new Audio("./Sounds/navi_hey.mp3");
-const bgMusic = new Audio("./sounds/Toddler Band - Godmode.mp3");
-const holes = document.querySelectorAll(".boxMole");
-const moleHoles = document.querySelectorAll(".mole");
-const scoreDisplay = document.getElementById("point");
-
-//Initialize variables
-let lastMoleHole;
-let countDown = false;
+const holes = document.querySelectorAll('.boxMole');
+console.log(holes);
+const scoreBoard = document.querySelector('.score');
+const moles = document.querySelectorAll('.mole');
+let timeUp = false;
 let score = 0;
+let lastHole;
+let timerId;
 
-
-
-// Choose a random time between 0.5-1.2 seconds
-function randomTime() {
-    return Math.random() * (1200 - 500) + 500;
-}
-
-//Chooses a random mole hole. If it's the same one, it goes through the loop again.
-function randomMoleHole(holes) {
-    const iHole = Math.floor(Math.random() * holes.length);
-    const hole = holes[iHole];
-    if (lastMoleHole === hole) {
-        return randomMoleHole(holes);
+function randomHole(holes) {
+    const idx = Math.floor(Math.random() * holes.length);
+    const hole = holes[idx];
+    if (hole === lastHole) {
+        console.log('duplicate hole');
+        return randomHole(holes);
     }
-    lastMoleHole = hole;
+    lastHole = hole;
     return hole;
 }
 
-//Makes the mole appear and disappear depending on random time from randomTime
-function popMole() {
-    const randomTime = randomTime();
-    const hole = randomMoleHole(holes);
-    moleHoles.classList.add("popped");
-
+function peep() {
+    const time = 800;
+    const hole = randomHole(holes);
+    hole.classList.add('up');
     setTimeout(() => {
-        if (!countDown) popMole();
-        moleHoles.classList.remove("popped");
-    }, randomTime());
+        hole.classList.remove('up');
+        if (!timeUp) peep();
+    }, time);
 }
 
-//Starts the game with a countdown timer of 30 seconds. 
-function gameStart() {
-    scoreDisplay.textContent = 0;
+function startGame() {
+    document.getElementById("btnStart").disabled = true;
+    pointCount.textContent = 0;
+    timeUp = false;
     score = 0;
-    countDown = false;
-    popMole();
-    setTimeout(() => countDown = true, 30000);
+    peep();
+    timerId = setInterval(countdown, 1000);
+    setTimeout(() => timeUp = true, 31000);
+
 }
 
-//+1 points for each mole that is hit.
-function hitMole(e) {
+function whack(e) {
     score++;
-    moleHoles.classList.remove("popped");
-    scoreDisplay.textContent = score;
-    heyNavi.play();
+    this.parentNode.classList.remove('up');
+    pointCount.textContent = score;
 }
+moles.forEach(mole => mole.addEventListener('click', whack));
 
-//Event Listeners
-document.getElementById("startGame").addEventListener("click", () => {
-    gameStart();
-    bgMusic.play();
-});
-moleHoles.forEach(hole => hole.addEventListener('mousedown', hitMole));
+var timeLeft = 30;
+var elem = document.getElementById('gameTimer');
+
+function countdown() {
+    if (timeLeft == -1) {
+        clearTimeout(timerId);
+        document.getElementById("btnStart").disabled = false;
+    } else {
+        elem.innerHTML = timeLeft + ' seconds remaining';
+        timeLeft--;
+    }
+}
