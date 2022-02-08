@@ -41,7 +41,7 @@ function popMole() {
 
 //Start Game functionality
 function startGame() {
-    document.getElementById("btnStart").disabled = true;
+    document.getElementById("startGame").disabled = true;
     scoreDisplay.textContent = "Score: " + 0;
     totalTime = false;
     score = 0;
@@ -64,7 +64,7 @@ function hitMole(e) {
 function countdownTimer() {
     if (timeLeft == -1) {
         clearTimeout(timerId);
-        document.getElementById("btnStart").disabled = false;
+        document.getElementById("startGame").disabled = false;
         bgMusic.pause();
     } else {
         timerDisplay.innerHTML = timeLeft + ' seconds remaining';
