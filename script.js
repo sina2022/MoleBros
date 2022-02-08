@@ -1,62 +1,75 @@
+const heyNavi = new Audio('./Sounds/navi_hey.mp3');
+const bgMusic = new Audio('./Sounds/Toddler Band - Godmode.mp3');
 const holes = document.querySelectorAll('.boxMole');
-console.log(holes);
-const scoreBoard = document.querySelector('.score');
-const moles = document.querySelectorAll('.mole');
-let timeUp = false;
+const scoreDisplay = document.querySelector('#pointCount');
+const diglett = document.querySelectorAll('.mole');
+const timerDisplay = document.getElementById('gameTimer');
+
+let totalTime = false;
 let score = 0;
 let lastHole;
 let timerId;
 let timeLeft;
 
-function randomHole(holes) {
-    const idx = Math.floor(Math.random() * holes.length);
-    const hole = holes[idx];
+//Generate a random time from a range
+function randomTime() {
+    return Math.round(Math.random() * (1200 - 400) + 400);
+}
+
+//Choose a random hole to pop out from
+function randomMoleHole(holes) {
+    const iHole = Math.floor(Math.random() * holes.length);
+    const hole = holes[iHole];
     if (hole === lastHole) {
-        console.log('duplicate hole');
-        return randomHole(holes);
+        return randomMoleHole(holes);
     }
     lastHole = hole;
     return hole;
 }
 
-function peep() {
-    const time = 800;
-    const hole = randomHole(holes);
+//Make random moles pop up from screen
+function popMole() {
+    const timeRand = randomTime();
+    const hole = randomMoleHole(holes);
     hole.classList.add('popped');
     setTimeout(() => {
         hole.classList.remove('popped');
-        if (!timeUp) peep();
-    }, time);
+        if (!totalTime) popMole();
+    }, timeRand);
 }
 
+//Start Game functionality
 function startGame() {
     document.getElementById("btnStart").disabled = true;
-    pointCount.textContent = 0;
-    timeUp = false;
+    scoreDisplay.textContent = "Score: " + 0;
+    totalTime = false;
     score = 0;
-    peep();
-    timeLeft = 5;
-    timerId = setInterval(countdown, 1000);
-    setTimeout(() => timeUp = true, 5000);
-
+    popMole();
+    timeLeft = 30;
+    timerId = setInterval(countdownTimer, 1000);
+    setTimeout(() => totalTime = true, 30000);
+    bgMusic.play();
 }
 
-function whack(e) {
+//Hit mole once it pops up and add score
+function hitMole(e) {
     score++;
     this.parentNode.classList.remove('popped');
-    pointCount.textContent = score;
+    scoreDisplay.textContent = "Score: " + score;
+    heyNavi.play();
 }
-moles.forEach(mole => mole.addEventListener('click', whack));
 
-
-let elem = document.getElementById('gameTimer');
-
-function countdown() {
+//Count down time and display remaining time
+function countdownTimer() {
     if (timeLeft == -1) {
         clearTimeout(timerId);
         document.getElementById("btnStart").disabled = false;
     } else {
-        elem.innerHTML = timeLeft + ' seconds remaining';
+        timerDisplay.innerHTML = timeLeft + ' seconds remaining';
         timeLeft--;
     }
 }
+
+//Event Listeners
+diglett.forEach(mole => mole.addEventListener('click', hitMole));
+
