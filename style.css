@@ -1,6 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Kite+One&family=Titan+One&display=swap");
+
 header {
   border: 1px solid #a56642;
   background-color: #c29378;
+  font-family: "Titan One", cursive;
+  font-size: 30px;
 }
 
 main {
@@ -25,6 +29,10 @@ footer {
   height: 50px;
   border: 1px solid #bd976c;
   background-color: #e4d1ba;
+  font-family: "Kite One", sans-serif;
+  border-radius: 5px;
+  text-align: center;
+  padding-top: 8px;
 }
 
 #startGame {
@@ -32,6 +40,8 @@ footer {
   height: 50px;
   border: 1px solid #bd976c;
   background-color: #e4d1ba;
+  font-family: "Kite One", sans-serif;
+  font-size: 20px;
 }
 
 #gameTimer {
@@ -39,6 +49,18 @@ footer {
   height: 50px;
   border: 1px solid #bd976c;
   background-color: #e4d1ba;
+  font-family: "Kite One", sans-serif;
+  border-radius: 5px;
+  text-align: center;
+  padding-top: 8px;
+}
+
+#btnStart {
+  background-color: #b6f1be;
+  padding: 6px;
+  width: 70%;
+  border: 2px solid #4db35b;
+  border-radius: 5px;
 }
 
 .mole {
