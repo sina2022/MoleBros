@@ -1,45 +1,52 @@
+body {
+  border-radius: 100px;
+}
+
 header {
-  border: 1px solid blue;
-  background-color: aqua;
+  border: 1px solid black;
+  background-color: #c29378;
 }
 
 main {
-  border: 1px solid red;
-  background-color: rgb(128, 112, 91);
+  border: 1px solid black;
+  background-color: #e2bd92;
 }
 
 footer {
-  background-color: darkkhaki;
+  border: 1px solid black;
+  background-color: #c29378;
 }
 
 .boxMole {
   width: 100px;
   height: 100px;
-  border: 1px solid green;
-  background-color: coral;
+  border: 1px solid rgb(104, 173, 230);
+  background-color: skyblue;
+  background-image: url("Photos/diglett.png");
 }
 
 #pointCount {
   width: 50px;
   height: 50px;
-  border: 1px solid orange;
-  background-color: darkcyan;
+  border: 1px solid #ac9e8f;
+  background-color: #e4d1ba;
 }
 
 #startGame {
   width: 50px;
   height: 50px;
-  border: 1px solid purple;
-  background-color: darkgray;
+  border: 1px solid #ac9e8f;
+  background-color: #e4d1ba;
 }
 
 #gameTimer {
   width: 50px;
   height: 50px;
-  border: 1px solid teal;
-  background-color: fuchsia;
+  border: 1px solid #ac9e8f;
+  background-color: #e4d1ba;
 }
 
+<<<<<<< HEAD
 .mole {
   background: url("/Photos/diglett.jpg") bottom center no-repeat;
   background-size: 35%;
@@ -71,3 +78,31 @@ footer {
 .boxMole.popped .mole {
   top: 0;
 }
+=======
+.hole1,
+.hole2,
+.hole3,
+.hole4,
+.hole5,
+.hole6,
+.hole7,
+.hole8,
+.hole9 {
+  background-image: url("Photos/diglett.png");
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  justify-content: center;
+}
+
+/*.ground {
+  background-image: url("Photos/diglett.png");
+  z-index: 1;
+  background-size: contain;
+}*/
+
+/*.mole {
+  background-image: url("Photos/diglett.png");
+  background-size: contain;
+}*/
+>>>>>>> 20f4e3de4f6f63c3f79e71c9ea78cff2f1f63581
