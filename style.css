@@ -46,29 +46,43 @@ footer {
   background-color: #e4d1ba;
 }
 
-.hole1,
-.hole2,
-.hole3,
-.hole4,
-.hole5,
-.hole6,
-.hole7,
-.hole8,
-.hole9 {
+.mole {
+  background: url("/Photos/diglett.jpg") bottom center no-repeat;
+  background-size: 35%;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  transition: all 0.4s ease;
+}
+
+.boxMole {
+  flex: 1 0 33.33%;
+  overflow: hidden;
+  position: relative;
+}
+
+.boxMole:after {
+  display: block;
+  background: url("/Photos/ground.jpg") bottom center no-repeat;
+  background-size: contain;
+  content: "";
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  z-index: 2;
+  bottom: -20px;
+}
+
+.boxMole.popped .mole {
+  top: 0;
+}
+
+.mole {
   background-image: url("Photos/diglett.png");
   background-size: contain;
   background-position: 50%;
   background-repeat: no-repeat;
   justify-content: center;
+  /*display: none;*/
 }
-
-/*.ground {
-  background-image: url("Photos/diglett.png");
-  z-index: 1;
-  background-size: contain;
-}*/
-
-/*.mole {
-  background-image: url("Photos/diglett.png");
-  background-size: contain;
-}*/
