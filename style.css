@@ -22,6 +22,7 @@ footer {
   height: 100px;
   border: 1px solid rgb(104, 173, 230);
   background-color: skyblue;
+  background-image: url("Photos/diglett.png");
 }
 
 #pointCount {
@@ -45,10 +46,29 @@ footer {
   background-color: #e4d1ba;
 }
 
-.ground {
-  background-image: url("/Photos/ground.jpg");
+.hole1,
+.hole2,
+.hole3,
+.hole4,
+.hole5,
+.hole6,
+.hole7,
+.hole8,
+.hole9 {
+  background-image: url("Photos/diglett.png");
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  justify-content: center;
 }
 
-.mole {
-  background-image: url("/Photos/diglett.jpg");
-}
+/*.ground {
+  background-image: url("Photos/diglett.png");
+  z-index: 1;
+  background-size: contain;
+}*/
+
+/*.mole {
+  background-image: url("Photos/diglett.png");
+  background-size: contain;
+}*/
