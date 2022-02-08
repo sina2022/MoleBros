@@ -20,7 +20,7 @@ footer {
 .boxMole {
   width: 100px;
   height: 150px;
-  border: 1px solid green;
+  border: 1px solid rgb(79, 178, 218);
   background-color: skyblue;
 }
 
@@ -32,6 +32,7 @@ footer {
   border: 1px solid #bd976c;
   background-color: #e4d1ba;
   font-family: "Kite One", sans-serif;
+  font-weight: bold;
   border-radius: 5px;
 }
 
@@ -42,17 +43,10 @@ footer {
 }
 
 #startGame {
+  font-weight: bold;
   font-size: 25px;
+  color: #006d00;
 }
-
-/*#btnStart {
-  background-color: #c29378;
-  padding: 6px;
-  width: 70%;
-  border: 4px solid #e4d1ba;
-  border-radius: 15px;
-  font-size: 25px;
-}*/
 
 .mole {
   background: url("Photos/diglett2.png") bottom center no-repeat;
