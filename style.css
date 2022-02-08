@@ -1,53 +1,49 @@
-body {
-  border-radius: 100px;
-}
-
 header {
-  border: 1px solid black;
-  background-color: #c29378;
+  border: 1px solid blue;
+  background-color: aqua;
 }
 
 main {
-  border: 1px solid black;
-  background-color: #e2bd92;
+  border: 1px solid red;
+  background-color: rgb(128, 112, 91);
 }
 
 footer {
-  border: 1px solid black;
-  background-color: #c29378;
+  background-color: darkkhaki;
 }
 
 .boxMole {
   width: 100px;
-  height: 100px;
-  border: 1px solid rgb(104, 173, 230);
-  background-color: skyblue;
+  height: 150px;
+  border: 1px solid green;
+  background-color: rgb(250, 220, 165);
 }
 
 #pointCount {
   width: 50px;
   height: 50px;
-  border: 1px solid #ac9e8f;
-  background-color: #e4d1ba;
+  border: 1px solid orange;
+  background-color: darkcyan;
 }
 
 #startGame {
   width: 50px;
   height: 50px;
-  border: 1px solid #ac9e8f;
-  background-color: #e4d1ba;
+  border: 1px solid purple;
+  background-color: darkgray;
 }
 
 #gameTimer {
   width: 50px;
   height: 50px;
-  border: 1px solid #ac9e8f;
-  background-color: #e4d1ba;
+  border: 1px solid teal;
+  background-color: fuchsia;
 }
 
 .mole {
-  background: url("/Photos/diglett.jpg") bottom center no-repeat;
-  background-size: 35%;
+  background: url("/Photos/diglett.png") bottom center no-repeat;
+  background-size: 50%;
+  position: absolute;
   top: 100%;
   width: 100%;
   height: 100%;
@@ -62,7 +58,7 @@ footer {
 
 .boxMole:after {
   display: block;
-  background: url("/Photos/ground.jpg") bottom center no-repeat;
+  background: url("/Photos/ground.png") bottom center no-repeat;
   background-size: contain;
   content: "";
   width: 100%;
@@ -72,15 +68,6 @@ footer {
   bottom: -20px;
 }
 
-.boxMole.popped .mole {
+.boxMole.up .mole {
   top: 0;
 }
-
-/*.mole {
-  background-image: url("Photos/diglett.png");
-  background-size: contain;
-  background-position: 50%;
-  background-repeat: no-repeat;
-  justify-content: center;
-  /*display: none;*/
-}*/

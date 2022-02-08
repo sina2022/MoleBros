@@ -1,13 +1,12 @@
-const heyNavi = new Audio("./Sounds/navi_hey.mp3");
-const bgMusic = new Audio("./Sounds/Toddler Band - Godmode.mp3");
 const holes = document.querySelectorAll('.boxMole');
+console.log(holes);
 const scoreBoard = document.querySelector('.score');
 const moles = document.querySelectorAll('.mole');
-
 let timeUp = false;
 let score = 0;
 let lastHole;
 let timerId;
+let timeLeft;
 
 function randomHole(holes) {
     const idx = Math.floor(Math.random() * holes.length);
@@ -36,8 +35,9 @@ function startGame() {
     timeUp = false;
     score = 0;
     peep();
+    timeLeft = 5;
     timerId = setInterval(countdown, 1000);
-    setTimeout(() => timeUp = true, 31000);
+    setTimeout(() => timeUp = true, 5000);
 
 }
 
@@ -48,8 +48,8 @@ function whack(e) {
 }
 moles.forEach(mole => mole.addEventListener('click', whack));
 
-var timeLeft = 30;
-var elem = document.getElementById('gameTimer');
+
+let elem = document.getElementById('gameTimer');
 
 function countdown() {
     if (timeLeft == -1) {
