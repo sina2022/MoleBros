@@ -1,7 +1,9 @@
+const heyNavi = new Audio("./Sounds/navi_hey.mp3");
+const bgMusic = new Audio("./Sounds/Toddler Band - Godmode.mp3");
 const holes = document.querySelectorAll('.boxMole');
-console.log(holes);
 const scoreBoard = document.querySelector('.score');
 const moles = document.querySelectorAll('.mole');
+
 let timeUp = false;
 let score = 0;
 let lastHole;
