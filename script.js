@@ -12,6 +12,8 @@ let timerId;
 let timeLeft;
 bgMusic.volume = 0.2;
 
+alert("Click on the moles that pop up to get a point");
+
 //Generate a random time from a range from 0.4-1.2s
 function randomTime() {
     return Math.round(Math.random() * (1200 - 400) + 400);
@@ -53,7 +55,7 @@ function startGame() {
 }
 
 //Hit mole once it pops up and add score
-function hitMole(e) {
+function hitMole(event) {
     score++;
     this.parentNode.classList.remove('popped');
     scoreDisplay.textContent = "Score: " + score;
