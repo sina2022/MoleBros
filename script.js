@@ -11,6 +11,7 @@ let lastHole;
 let timerId;
 let timeLeft;
 bgMusic.volume = 0.2;
+let highScore = 0;
 
 alert("Instructions: Click on the moles that pop up to get a point!");
 
@@ -38,6 +39,7 @@ function popMole() {
     setTimeout(() => {
         hole.classList.remove('popped');
         if (!totalTime) popMole();
+
     }, timeRand);
 }
 
@@ -68,6 +70,12 @@ function countdownTimer() {
         clearTimeout(timerId);
         document.getElementById("startGame").disabled = false;
         bgMusic.pause();
+
+        let finalScore = score;
+        if (highScore < finalScore) {
+            highScore = finalScore;
+        }
+        document.getElementById("highScore").textContent = "highScore= " + highScore;
     } else {
         timerDisplay.innerHTML = timeLeft + ' seconds remaining';
         timeLeft--;
@@ -76,4 +84,3 @@ function countdownTimer() {
 
 //Event Listeners
 diglett.forEach(mole => mole.addEventListener('click', hitMole));
-
