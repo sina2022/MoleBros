@@ -26,7 +26,8 @@ footer {
 
 #pointCount,
 #startGame,
-#gameTimer {
+#gameTimer,
+#highScore {
   width: 50px;
   height: 60px;
   border: 1px solid #bd976c;
@@ -37,7 +38,8 @@ footer {
 }
 
 #pointCount,
-#gameTimer {
+#gameTimer,
+#highScore {
   text-align: center;
   padding-top: 14px;
 }
