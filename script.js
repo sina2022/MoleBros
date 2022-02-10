@@ -77,7 +77,8 @@ function countdownTimer() {
         clearTimeout(timerId);
         bgMusic.pause();
         clicked = false;
-        startButton.textContent = "Start"
+        startButton.textContent = "Start";
+        timerDisplay.textContent = "Timer";
 
         let finalScore = score;
         if (highScore < finalScore) {
@@ -85,7 +86,7 @@ function countdownTimer() {
         }
         document.getElementById("highScore").textContent = "Highscore: " + highScore;
     } else {
-        timerDisplay.innerHTML = timeLeft + ' seconds';
+        timerDisplay.textContent = timeLeft +'s';
         timeLeft--;
     }
 }
