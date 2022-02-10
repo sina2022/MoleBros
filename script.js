@@ -92,4 +92,4 @@ function countdownTimer() {
 }
 
 //Event Listeners
-diglett.forEach(mole => mole.addEventListener('click', hitMole));
+diglett.forEach(mole => mole.addEventListener('mousedown', hitMole));
