@@ -75,9 +75,9 @@ function countdownTimer() {
         if (highScore < finalScore) {
             highScore = finalScore;
         }
-        document.getElementById("highScore").textContent = "highScore= " + highScore;
+        document.getElementById("highScore").textContent = "Highscore: " + highScore;
     } else {
-        timerDisplay.innerHTML = timeLeft + ' seconds remaining';
+        timerDisplay.innerHTML = timeLeft + ' seconds';
         timeLeft--;
     }
 }
