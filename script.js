@@ -4,6 +4,7 @@ const holes = document.querySelectorAll('.boxMole');
 const scoreDisplay = document.querySelector('#pointCount');
 const diglett = document.querySelectorAll('.mole');
 const timerDisplay = document.getElementById('gameTimer');
+const startButton = document.getElementById("startGame");
 
 let totalTime = false;
 let score = 0;
@@ -12,6 +13,7 @@ let timerId;
 let timeLeft;
 bgMusic.volume = 0.2;
 let highScore = 0;
+let clicked = false;
 
 alert("Instructions: Click on the moles that pop up to get a point!");
 
@@ -45,15 +47,19 @@ function popMole() {
 
 //Start Game functionality
 function startGame() {
-    document.getElementById("startGame").disabled = true;
-    scoreDisplay.textContent = "Score: " + 0;
-    totalTime = false;
-    score = 0;
-    popMole();
-    timeLeft = 30;
-    timerId = setInterval(countdownTimer, 1000);
-    setTimeout(() => totalTime = true, 30000);
-    bgMusic.play();
+    if (!clicked) {
+        clicked = true;
+        startButton.textContent = "Good Luck";
+        scoreDisplay.textContent = "Score: " + 0;
+        totalTime = false;
+       
+        score = 0;
+        popMole();
+        timeLeft = 30;
+        timerId = setInterval(countdownTimer, 1000);
+        setTimeout(() => totalTime = true, 30000);
+        bgMusic.play();
+    }
 }
 
 //Hit mole once it pops up and add score
@@ -68,8 +74,9 @@ function hitMole(event) {
 function countdownTimer() {
     if (timeLeft == -1) {
         clearTimeout(timerId);
-        document.getElementById("startGame").disabled = false;
         bgMusic.pause();
+        clicked = false;
+        startButton.textContent = "Start"
 
         let finalScore = score;
         if (highScore < finalScore) {
