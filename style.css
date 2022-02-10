@@ -5,16 +5,19 @@ header {
   background-color: #c29378;
   font-family: "Titan One", cursive;
   font-size: 35px;
+  border-radius: 15px;
 }
 
 main {
-  border: 1px solid #bb8e5a;
+  border: 1px solid #a56642;
   background-color: #e2bd92;
+  border-radius: 15px;
 }
 
 footer {
   border: 1px solid #a56642;
   background-color: #c29378;
+  border-radius: 15px;
 }
 
 .boxMole {
@@ -22,6 +25,8 @@ footer {
   height: 150px;
   border: 1px solid rgb(79, 178, 218);
   background-color: skyblue;
+  border-radius: 15px;
+  border: 1px solid #a56642;
 }
 
 #pointCount,
@@ -42,12 +47,17 @@ footer {
 #highScore {
   text-align: center;
   padding-top: 14px;
+  border-radius: 15px;
+  border: 1px solid #a56642;
 }
 
 #startGame {
   font-weight: bold;
   font-size: 25px;
   color: #006d00;
+  border-radius: 15px;
+  text-align: center;
+  border: 1px solid #a56642;
 }
 
 .mole {
