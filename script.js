@@ -96,6 +96,7 @@ diglett.forEach(mole => mole.addEventListener('mousedown', hitMole));
 
 //darkmode button
 function darkMode() {
-    document.getElementsByTagName("header").style.backgroundColor = "#4e4e4e";
-    document.getElementsByTagName("footer").style.backgroundColor = "#4e4e4e";
+    document.getElementsByTagName("header")[0].style.backgroundColor = "#4e4e4e";
+    document.getElementsByTagName("footer")[0].style.backgroundColor = "#4e4e4e";
+    document.getElementsByTagName("main")[0].style.backgroundColor = "#686868"
 }
