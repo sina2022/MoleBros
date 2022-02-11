@@ -8,6 +8,17 @@ header {
   border-radius: 15px;
 }
 
+#btnTheme {
+  position: absolute;
+  right: 200px;
+  font-family: "Kite One", sans-serif;
+  font-size: 15px;
+  border-radius: 15px;
+  padding: 25px;
+  background-image: url("Photos/darkmode.png");
+  background-size: cover;
+}
+
 main {
   border: 1px solid #a56642;
   background-color: #e2bd92;
@@ -91,3 +102,4 @@ footer {
 .boxMole.popped .mole {
   top: 0;
 }
+

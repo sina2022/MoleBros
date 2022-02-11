@@ -93,3 +93,9 @@ function countdownTimer() {
 
 //Event Listeners
 diglett.forEach(mole => mole.addEventListener('mousedown', hitMole));
+
+//darkmode button
+function darkMode() {
+    document.getElementsByTagName("header").style.backgroundColor = "#4e4e4e";
+    document.getElementsByTagName("footer").style.backgroundColor = "#4e4e4e";
+}
