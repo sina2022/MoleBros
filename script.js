@@ -126,7 +126,7 @@ function darkMode() {
 //lightmode
 function lightMode() {
     document.getElementById("btnTheme").style.backgroundImage = "url('Photos/darkmode.png')";
-    var styled = document.querySelectorAll("*[style]");
+    let styled = document.querySelectorAll("*[style]");
     for (i = 0; i < styled.length; i++) {
         styled[i].removeAttribute("style");
     }
