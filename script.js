@@ -55,7 +55,7 @@ function startGame() {
         totalTime = false;
         timeLeft = 30;
         score = 0;
-        
+
         popMole();
         timerId = setInterval(countdownTimer, 1000);
         setTimeout(() => totalTime = true, 30000);
@@ -86,7 +86,7 @@ function countdownTimer() {
         }
         document.getElementById("highScore").textContent = "Highscore: " + highScore;
     } else {
-        timerDisplay.textContent = timeLeft +'s';
+        timerDisplay.textContent = timeLeft + 's';
         timeLeft--;
     }
 }
@@ -94,8 +94,13 @@ function countdownTimer() {
 //Event Listeners
 diglett.forEach(mole => mole.addEventListener('mousedown', hitMole));
 
-//darkmode button
+
+//variable used to toggle between light and dark mode
+let toggle = false;
+
+//darkmode
 function darkMode() {
+    document.getElementById("btnTheme").style.backgroundImage = "url('Photos/lightmode.png')";
     document.getElementsByTagName("header")[0].style.border = "1px solid black";
     document.getElementsByTagName("footer")[0].style.border = "1px solid black";
     document.getElementsByTagName("main")[0].style.border = "1px solid black";
@@ -107,4 +112,22 @@ function darkMode() {
     document.getElementsByTagName("header")[0].style.backgroundColor = "#4e4e4e";
     document.getElementsByTagName("footer")[0].style.backgroundColor = "#4e4e4e";
     document.getElementsByTagName("main")[0].style.backgroundColor = "#686868"
+
+    toggle = true;
+}
+
+//lightmode
+function lightMode() {
+    document.getElementById("btnTheme").style.backgroundImage = "url('Photos/darkmode.png')";
+    var styled = document.querySelectorAll("*[style]");
+    for (i = 0; i < styled.length; i++) {
+        styled[i].removeAttribute("style");
+    }
+
+    toggle = false;
+}
+
+//functio to toggle between modes
+function drkModeToggle() {
+    toggle ? lightMode() : darkMode();
 }
