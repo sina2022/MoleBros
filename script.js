@@ -96,6 +96,14 @@ diglett.forEach(mole => mole.addEventListener('mousedown', hitMole));
 
 //darkmode button
 function darkMode() {
+    document.getElementsByTagName("header")[0].style.border = "1px solid black";
+    document.getElementsByTagName("footer")[0].style.border = "1px solid black";
+    document.getElementsByTagName("main")[0].style.border = "1px solid black";
+    $(".boxMole").css("border", "1px solid black");
+    $("#pointCount").css("border", "1px solid black");
+    $("#gameTimer").css("border", "1px solid black");
+    $("#highScore").css("border", "1px solid black");
+    $("#startGame").css("border", "1px solid black");
     document.getElementsByTagName("header")[0].style.backgroundColor = "#4e4e4e";
     document.getElementsByTagName("footer")[0].style.backgroundColor = "#4e4e4e";
     document.getElementsByTagName("main")[0].style.backgroundColor = "#686868"
