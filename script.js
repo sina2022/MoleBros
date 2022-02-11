@@ -110,8 +110,15 @@ function darkMode() {
     $("#highScore").css("border", "1px solid black");
     $("#startGame").css("border", "1px solid black");
     document.getElementsByTagName("header")[0].style.backgroundColor = "#4e4e4e";
+    document.getElementsByTagName("header")[0].style.color = "#ffffff";
+    document.getElementsByTagName("main")[0].style.backgroundColor = "#686868";
     document.getElementsByTagName("footer")[0].style.backgroundColor = "#4e4e4e";
-    document.getElementsByTagName("main")[0].style.backgroundColor = "#686868"
+    document.getElementsByTagName("footer")[0].style.color = "#ffffff";
+    document.getElementById("pointCount").style.backgroundColor = "#686868";
+    document.getElementById("highScore").style.backgroundColor = "#686868";
+    document.getElementById("gameTimer").style.backgroundColor = "#686868";
+    document.getElementById("startGame").style.backgroundColor = "#686868";
+    document.getElementById("startGame").style.color = "#05c405";
 
     toggle = true;
 }
